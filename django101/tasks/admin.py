@@ -1,10 +1,11 @@
 from django.contrib import admin
 from tasks.models import Task
-# Register your models here.
 
 
+# alternatively you can use a decorator
+# @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    pass
     # list_display = ('id', 'title', 'priority')
+    pass
 
 admin.site.register(Task, TaskAdmin)
