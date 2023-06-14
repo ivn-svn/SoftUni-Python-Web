@@ -1,3 +1,4 @@
+{% load filters %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,7 +12,13 @@
 </head>
 <body>
 <nav>
-    <a href='{% url 'contact page' %}'>Contact</a>
+      <div class="dropdown">
+    <button class="dropbtn">Menu &#9662;</button>
+    <div class="dropdown-content">
+<a href="{{ contact_url }}">Contact</a>
+<a href="{{ gallery_url }}">Gallery</a>
+    </div>
+    </div>
 </nav>
 <table>
     <tr>
@@ -22,15 +29,15 @@
 <p>{{ nested.second|capfirst }}</p>
 <p>{{ student }}</p>
 <p>{{ now|date:"Y-m-d" }}</p>
-{% if students_second %}
-    <p>{{ students_second|join:", " }}</p>
+{% if students %}
+    <p>{{ students|join:", " }}</p>
 {% else %}
     <p>No students</p>
 {% endif %}
 
 <h2> For Loop Examples: </h2>
 <ul>
-{% for s in students_second %}
+{% for s in students %}
     <li>{{ s }}</li>
     {% endfor %}
 </ul>

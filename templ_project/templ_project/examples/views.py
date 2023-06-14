@@ -20,14 +20,18 @@ some_student = Student("John", 20)
 
 
 def index(request):
+    contact_url = reverse('contact page')
+    gallery_url = reverse('gallery page')
     context = {
+        'contact_url': contact_url,
+        'gallery_url': gallery_url,
         "title": "Home",
         "random_int": random.random(),
         "nested": {
             "second": "second value",
         },
         "student_age": some_student.get_age(),
-        "students": ["Kalin", "Ivan", "Pesho", "Pesho", "Mariya"],
+        "students": ["Kalin", "Ivan", "Pesho", "Мартин", "Mariya"],
         "students_second": [],
         "now": datetime.datetime.now(),
         "numbers": [1, 2, 3, 4, 5, 6, 7],
@@ -39,10 +43,17 @@ def index(request):
         ],
         "logged_in": True
     }
-
     # context + template = HtmlResponse('<html>...</html>')
     return render(request, 'examples/index.html', context=context)
 
 
 def contact_view(request):
-    return redirect('contact page')
+    return render(request, 'examples/contact.html')
+
+def gallery_view(request):
+    photos = [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+        "https://upload.wikimedia.org/wikipedia/commons/c/cd/Adjahoui.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Asim_Mukhopadhyay_with_Sir_Erlardso.jpg/1280px-Asim_Mukhopadhyay_with_Sir_Erlardso.jpg"
+    ]
+    return render(request, 'examples/gallery.html', {'photos': photos})
