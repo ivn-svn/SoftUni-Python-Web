@@ -6,9 +6,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+        {% block page_title %}
+        {% endblock %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+        {% block page_styles %}
+        /* Default styles or leave it empty */
+        {% endblock %}
 </head>
 <body>
 <div>BASE</div>
@@ -49,5 +54,8 @@
 
 
 {% endblock %}
+
+{% include 'examples\partials\footer.html' %}
+
 </body>
 </html>

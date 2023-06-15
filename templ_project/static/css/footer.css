@@ -1,0 +1,17 @@
+footer {
+   justify-content: center; /* Horizontally center aligns child items */
+    align-items: center; /* Vertically center aligns child items */
+    position: fixed;    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    color: white;
+    background-color: lightblue !important;
+    text-align: center;
+}
+
+p {
+       justify-content: center; /* Horizontally center aligns child items */
+    align-items: center; /* Vertically center aligns child items */
+        vertical-align: center !important;
+}
