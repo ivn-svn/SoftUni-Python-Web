@@ -1,4 +1,4 @@
-{% load filters %}
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,16 +7,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
 </head>
 <body>
+<div>BASE</div>
 <nav>
       <div class="dropdown">
     <button class="dropbtn">Menu &#9662;</button>
     <div class="dropdown-content">
 <a href="{{ contact_url }}">Contact</a>
 <a href="{{ gallery_url }}">Gallery</a>
+<a href="{{ about_url }}">About</a>
     </div>
     </div>
 </nav>
@@ -41,5 +43,11 @@
     <li>{{ s }}</li>
     {% endfor %}
 </ul>
+
+
+{% block page_content %}
+
+
+{% endblock %}
 </body>
 </html>
