@@ -1,12 +1,11 @@
 import datetime
 import random
 from django.urls import reverse
-
-
-from django.shortcuts import render, redirect
-from . import views
+from django.shortcuts import render
 import random
+
 # Create your views here.
+
 class Student():
     def __init__(self, name, age):
         self.name = name
@@ -20,13 +19,7 @@ some_student = Student("John", 20)
 
 
 def index(request):
-    contact_url = reverse('contact page')
-    gallery_url = reverse('gallery page')
-    about_url = reverse('about page')
     context = {
-        'contact_url': contact_url,
-        'gallery_url': gallery_url,
-        'about_url': about_url,
         "title": "Home",
         "random_int": random.random(),
         "nested": {
@@ -45,15 +38,16 @@ def index(request):
         ],
         "logged_in": True
     }
-    # context + template = HtmlResponse('<html>...</html>')
     return render(request, 'examples/partials/index.html', context=context)
 
 
 def contact_view(request):
-    return render(request, 'examples/contact.html')
+    return render(request, 'examples/partials/contact.html')
+
 
 def about_view(request):
     return render(request, 'examples/partials/about.html')
+
 
 def gallery_view(request):
     photos = [
@@ -61,4 +55,4 @@ def gallery_view(request):
         "https://upload.wikimedia.org/wikipedia/commons/c/cd/Adjahoui.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Asim_Mukhopadhyay_with_Sir_Erlardso.jpg/1280px-Asim_Mukhopadhyay_with_Sir_Erlardso.jpg"
     ]
-    return render(request, 'examples/gallery.html', {'photos': photos})
+    return render(request, 'examples/partials/gallery.html', {'photos': photos})
