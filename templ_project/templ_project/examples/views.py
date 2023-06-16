@@ -1,8 +1,12 @@
 import datetime
 import random
+from templ_project import settings
+
 from django.urls import reverse
 from django.shortcuts import render
 import random
+import glob
+import os
 
 # Create your views here.
 
@@ -49,10 +53,8 @@ def about_view(request):
     return render(request, 'examples/partials/about.html')
 
 
+
 def gallery_view(request):
-    photos = [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
-        "https://upload.wikimedia.org/wikipedia/commons/c/cd/Adjahoui.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Asim_Mukhopadhyay_with_Sir_Erlardso.jpg/1280px-Asim_Mukhopadhyay_with_Sir_Erlardso.jpg"
-    ]
+    photos = glob.glob('static/img/gallery/*.jpg')
+    photos = [os.path.basename(photo) for photo in photos]
     return render(request, 'examples/partials/gallery.html', {'photos': photos})
