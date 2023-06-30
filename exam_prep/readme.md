@@ -1,0 +1,117 @@
+<details>
+<summary>
+Folder & File Structure of the current project.
+</summary>
+
+- db.sqlite3
+- manage.py
+- structure.py
+- exam_prep
+  - asgi.py
+  - settings.py
+  - urls.py
+  - wsgi.py
+  - __init__.py
+  - webapp
+    - admin.py
+    - apps.py
+    - models.py
+    - models_ik.py
+    - tests.py
+    - urls.py
+    - validators.py
+    - views.py
+    - __init__.py
+    - migrations
+      - 0001_initial.py
+      - __init__.py
+- static
+  - css
+    - catalog.css
+    - create.css
+    - details.css
+    - home.css
+    - login.css
+    - style.css
+    - typography.css
+  - images
+    - back.jpg
+    - BrandiCarlile.png
+    - headphones.png
+    - Lorde.jpg
+    - musicIcons.webp
+    - pinkFloyd.jpg
+- staticfiles
+  - admin
+    - css
+      - autocomplete.css
+      - base.css
+      - changelists.css
+      - dark_mode.css
+      - dashboard.css
+      - forms.css
+      - login.css
+      - nav_sidebar.css
+      - responsive.css
+      - responsive_rtl.css
+      - rtl.css
+      - widgets.css
+    - img
+      - calendar-icons.svg
+      - icon-addlink.svg
+      - icon-alert.svg
+      - icon-calendar.svg
+      - icon-changelink.svg
+      - icon-clock.svg
+      - icon-deletelink.svg
+      - icon-no.svg
+      - icon-unknown-alt.svg
+      - icon-unknown.svg
+      - icon-viewlink.svg
+      - icon-yes.svg
+      - inline-delete.svg
+      - LICENSE
+      - README.txt
+      - search.svg
+      - selector-icons.svg
+      - sorting-icons.svg
+      - tooltag-add.svg
+      - tooltag-arrowright.svg
+      - gis
+        - move_vertex_off.svg
+        - move_vertex_on.svg
+    - js
+      - actions.js
+      - autocomplete.js
+      - calendar.js
+      - cancel.js
+      - change_form.js
+      - collapse.js
+      - core.js
+      - filters.js
+      - inlines.js
+      - jquery.init.js
+      - nav_sidebar.js
+      - popup_response.js
+      - prepopulate.js
+      - prepopulate_init.js
+      - SelectBox.js
+      - SelectFilter2.js
+      - theme.js
+      - urlify.js
+      - admin
+        - DateTimeShortcuts.js
+        - RelatedObjectLookups.js
+- templates
+  - add-album.html
+  - album-details.html
+  - base.html
+  - delete-album.html
+  - edit-album.html
+  - home-no-profile.html
+  - home-with-profile.html
+  - home.html
+  - navbar.html
+  - profile-delete.html
+  - profile-details.html
+</details>
