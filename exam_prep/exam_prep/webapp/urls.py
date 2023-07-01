@@ -15,9 +15,9 @@ from exam_prep.webapp import views
 urlpatterns = [
     path('', views.home_page, name='home_page'),
     path('album/add/', views.create_album_page, name='create_album_page'),
-#    path('album/details/<int:pk>/', views.album_details_page, name='album_details_page'),
-#    path('album/edit/<int:pk>/', views.edit_album_page, name='edit_album_page'),
- #   path('album/delete/<int:pk>/', views.delete_album_page, name='delete_album_page'),
+    path('album/details/<int:pk>/', views.album_details_page, name='album_details_page'),
+    path('album/edit/<int:pk>/', views.edit_album_page, name='edit_album_page'),
+    path('album/delete/<int:pk>/', views.delete_album_page, name='delete_album_page'),
     path('profile/details/', views.profile_page, name='profile_page'),
-   # path('profile/delete/', views.delete_profile_page, name='delete_profile_page'),
+    path('profile/delete/', views.delete_profile_page, name='delete_profile_page'),
 ]
